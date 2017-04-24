@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p ~/mysql_db
+
+docker run \
+        --name mysql_d \
+        -p 3306:3306 \
+        -e MYSQL_ROOT_PASSWORD=root \
+        -v ~/mysql_db:/var/lib/mysql \
+        -d mysql:8
